@@ -47,7 +47,10 @@ class ViewController: UIViewController {
     }
 
     @objc func GoToSecVC() {
-        let NV = UINavigationController(rootViewController: SecondViewController())
+        let nv = SecondViewController()
+        nv.sendDelegate = self
+        
+        let NV = UINavigationController(rootViewController: nv)
         NV.modalPresentationStyle = .fullScreen
         present(NV, animated: true, completion: nil)
     }
